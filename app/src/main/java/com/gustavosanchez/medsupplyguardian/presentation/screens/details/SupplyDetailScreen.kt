@@ -95,7 +95,7 @@ fun SupplyDetailScreen(navController: NavController, itemId: Int) {
         )
     )
     
-    val item by viewModel.getItemById(itemId).collectAsState()
+    val item by remember { viewModel.getItemById(itemId) }.collectAsState(initial = null)
     var showUpdateDialog by remember { mutableStateOf(false) }
     
     if (item == null) {
