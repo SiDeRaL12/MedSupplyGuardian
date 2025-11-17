@@ -54,10 +54,15 @@ class MainActivity : ComponentActivity() {
             val isLoading by viewModel.isLoading.collectAsState()
             
             MedSupplyGuardianTheme(darkTheme = userPreferences.isDarkTheme) {
-                if (isLoading) {
-                    LoadingScreen()
-                } else {
-                    MainContent()
+                 val navController = rememberNavController()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    if (isLoading) {
+                        LoadingScreen()
+                    } else {
+                        Box(modifier = Modifier.padding(innerPadding)) {
+                            NavGraph(navController = navController)
+                        }
+                    }
                 }
             }
         }
@@ -79,22 +84,5 @@ fun LoadingScreen() {
         contentAlignment = Alignment.Center
     ) {
         CircularProgressIndicator()
-    }
-}
-
-/**
- * Main content composable containing the navigation graph.
- * 
- * Creates the navigation controller and hosts all application screens.
- * 
- * @author Gustavo Sanchez
- */
-@Composable
-fun MainContent() {
-    val navController = rememberNavController()
-    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-        Box(modifier = Modifier.padding(innerPadding)) {
-            NavGraph(navController = navController)
-        }
     }
 }
