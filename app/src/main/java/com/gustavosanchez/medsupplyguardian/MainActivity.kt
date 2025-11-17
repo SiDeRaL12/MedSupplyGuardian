@@ -13,6 +13,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.gustavosanchez.medsupplyguardian.ui.theme.MedSupplyGuardianTheme
 
+/**
+ * Main entry point for MedSupply Guardian application.
+ *
+ * This activity serves as the host for the entire Compose-based UI.
+ * It initializes the Material Design 3 theme and provides the base
+ * scaffold for navigation and screen composition.
+ *
+ * @author Gustavo Sanchez
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +30,7 @@ class MainActivity : ComponentActivity() {
             MedSupplyGuardianTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "MedSupply Guardian",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,7 +42,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Welcome to $name",
         modifier = modifier
     )
 }
@@ -42,6 +51,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     MedSupplyGuardianTheme {
-        Greeting("Android")
+        Greeting("MedSupply Guardian")
     }
 }
