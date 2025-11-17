@@ -1,4 +1,4 @@
-package com.example.compose
+package com.gustavosanchez.medsupplyguardian.ui.theme
 import androidx.compose.ui.graphics.Color
 
 /**
@@ -229,10 +229,3 @@ val surfaceContainerLowDarkHighContrast = Color(0xFF1E2025)
 val surfaceContainerDarkHighContrast = Color(0xFF2E3036)
 val surfaceContainerHighDarkHighContrast = Color(0xFF393B41)
 val surfaceContainerHighestDarkHighContrast = Color(0xFF45474C)
-
-
-
-
-
-
-
